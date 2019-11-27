@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="manifest" href="manifest.json">
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 450px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+
+.title {
+  color: grey;
+  font-size: 20px;
+  margin: 50px;
+  text-align: center;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #ddd;
+  position: relative;
+}
+.topnav #myLinks {
+  display: none;
+}
+.topnav a {
+  color: black;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+.topnav a.icon {
+  background: white;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.topnav a:hover {
+  background-color: #ccc;
+  color: black;
+}
+.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.rate {
+    height: 46px;
+    padding: 0 10px;
+    display: inline-block;
+  }
+.rate-container{
+  text-align: center;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+.home {
+  border: solid black 1px;
+  max-width: 80%;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  border-radius: 10px;
+  margin-bottom:10px;
+}
+
+.photo-wrapper {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.profilepic {
+  border: solid black 1px;
+  border-radius: 10px;
+  position: relative;
+  top: 0;
+  left: 0;
+  max-width:100%;
+  height: 100px;
+  float:left;
+  margin: 5px;
+}
+.star {
+  position: absolute;
+  top: 75px;
+  left: 85px;
+}
+.rating {
+  position: absolute;
+  top: 70px;
+  left: 120px;
+}
+.bed-icon {
+  position: absolute;
+  width:50px;
+  height:50px;
+  top: 40px;
+  left: 160px;
+}
+bath-icon{
+  position: absolute;
+  width:50px;
+  height:50px;
+  top: 40px;
+  left: 160px;
+}
+pet-icon{
+  position: absolute;
+  width:50px;
+  height:50px;
+  top: 40px;
+  left: 160px;
+}
+.num {
+  position: absolute;
+  top: 5px;
+  left: 185px;
+}
+</style>
+</head>
+
+<div class="card">
+
+
+  <div class="header">
+    <div class="topnav">
+    <a href="#home" class="active">Search</a>
+    <div id="myLinks">
+      <a href="map.html">Search</a>
+      <a href="landlordprofile.html">Profile</a>
+      <a href="landlord-dashboard.html">Dashboard</a>
+      <a href="workorder.html">Work Orders</a>
+    </div>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+    </div>
+  </div>
+
+<body>
+
+  <div id="demo"></div>
+  <h2>title</h2>
+
+  <img width="80%;"src="img/map.jpeg">
+
+  <div class="home">
+    <div class="photo-wrapper">
+      <img src="img/profilepic.jpeg" class="profilepic" alt="">
+      <img src="img/star.png" class="star" alt="" style="border: none; width:30px; height:30px; ">
+      <h6 class="rating">4.6</h6>
+    </div>
+    <div class="home-info">
+      <h3>Property 1</h3>
+      <p>1234 Main Street<br>$1500/month</p>
+    </div>
+  </div>
+  <div class="home">
+    <div class="photo-wrapper">
+      <img src="img/profilepic.jpeg" class="profilepic" alt="">
+      <img src="img/star.png" class="star" alt="" style="border: none; width:30px; height:30px; ">
+      <h6 class="rating">4.6</h6>
+    </div>
+    <div class="home-info">
+      <h3>Property 1</h3>
+      <p>1234 Main Street<br>$1500/month</p>
+    </div>
+  </div>
+  <div class="home">
+    <div class="photo-wrapper">
+      <img src="img/profilepic.jpeg" class="profilepic" alt="">
+      <img src="img/star.png" class="star" alt="" style="border: none; width:30px; height:30px; ">
+      <h6 class="rating">4.6</h6>
+    </div>
+    <div class="home-info">
+      <h3>Property 1</h3>
+      <p>1234 Main Street<br>$1500/month</p>
+    </div>
+  </div>
+
+
+</div>
+<script>
+  
+  var output = document.getElementById('output');
+  output.innerHTML = jcontent.map;
+
+
+  function myFunction() {
+    var x = document.getElementById("myLinks");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+
+</script>
+
+
+</body>
+</html>

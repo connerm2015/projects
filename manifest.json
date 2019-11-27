@@ -1,0 +1,133 @@
+{
+    "name": "Rental Raters",
+    "short_name": "Rentals",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#ccc",
+    "description": "An app to help renters and tenants connect.",
+    "icons":[
+        {
+            "src": "img/profilepic.jpeg",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "img/map.jpeg",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "img/add-btn.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "img/bath-icon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "img/bed-icon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "img/Hamburger.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "img/home.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "img/pet-icon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "img/star.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    
+    "landlordprofile": [
+      {
+        "name": "John Doe",
+        "email": "jdoe@gmail.com",
+        "num_property": "5",
+        "landlord_desc": "",
+        "workorder_length": "2 week",
+        "availability": "weekends",
+        "pet_allowed": "NO",
+        "picture": [
+          {
+            "src": "img/profile1.jpg",
+            "sizes": "512x512",
+            "type": "image/png"
+          }
+        ]
+      },
+      {
+        "name": "Sandra Harris",
+        "email": "sharris@gmail.com",
+        "num_property": "3",
+        "landlord_desc": "",
+        "workorder_length": "1 week",
+        "availability": "evenings and weekends",
+        "pet_allowed": "YES",
+        "picture": [
+          {
+            "src": "img/profile3.jpg",
+            "sizes": "512x512",
+            "type": "image/png"
+          }
+        ]
+      }
+    ],
+    "tenantprofile": [
+      {
+        "name": "James Smith",
+        "email": "jsmith@gmail.com",
+        "house_size": "5",
+        "current_price": "$2000",
+        "house_length": "1 year",
+        "current_job": "Teacher",
+        "job_length": "2016",
+        "income": "$50,000",
+        "credit_score": "700",
+        "move_in": "Aug 15-Sept 15",
+        "lease_length": "2 years",
+        "picture": [
+          {
+            "src": "img/profile2.jpg",
+            "sizes": "512x512",
+            "type": "image/png"
+          }
+        ]
+      },
+      {
+        "name": "Jane Doe",
+        "email": "jdoe@gmail.com",
+        "house_size": "2",
+        "current_price": "$2500",
+        "house_length": "2012",
+        "current_job": "Broker",
+        "job_length": "2009",
+        "income": "$80,000",
+        "credit_score": "750",
+        "move_in": "July 1-Sept 1",
+        "lease_length": "3 years",
+        "picture": [
+            {
+              "src": "img/profile4.jpg",
+              "sizes": "512x512",
+              "type": "image/png"
+            }
+        ]
+      }
+    ]
+    
+  }
