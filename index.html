@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <script>
+        window.isMbscDemo = true;
+    </script>
+    <title>Mobile form</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/mobiscroll.javascript.min.css">
+    <script src="js/mobiscroll.javascript.min.js"></script>
+    <style type="text/css">
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    .skip-btn{
+      text-align: center;
+    }
+    .content{
+      width: 100%;
+      text-align: center;
+    }
+    #brand{
+      margin: 20px 20px 8px 20px;
+    }
+    .content #brand img{
+      width: 50%;
+      height: 150px;
+    }
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      max-width: 450px;
+      margin: auto;
+      text-align: center;
+      font-family: arial;
+    }
+    </style>
+
+</head>
+<body>
+
+<div class="card">
+
+  <div class="content">
+    <div id="brand">
+      <img src="img/home.png" alt="home logo">
+    </div>
+  </div>
+
+
+  <div mbsc-page class="demo-mobile">
+      <div mbsc-form>
+          <div class="mbsc-form-group">
+              <div class="mbsc-form-group-title">Finish your profile</div>
+              <form name="dropdown">
+                <select name="selected" id="target" accesskey="E" mbsc-dropdown data-input-style="box">
+                  <option selected>Select</option>
+                  <option value="tenantprofile.html">Tenant</option>
+                  <option value="landlordprofile.html">Landlord</option>
+                </select>
+              </form>
+              <label>
+                <select mbsc-dropdown data-input-style="box">
+                  <option>Household Size</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                </select>
+              </label>
+              <label>
+                Current Address
+                <input mbsc-input data-icon="empty" data-label-style="stacked" data-input-style="underline" type="text" placeholder="123 Main St." />
+              </label>
+              <label>
+                Since?
+                <input mbsc-input data-icon="empty" data-label-style="stacked" data-input-style="underline" type="text" placeholder="2012" />
+              </label>
+              <label>
+                How much do you pay a month?
+                <input mbsc-input data-icon="empty" data-label-style="stacked" data-input-style="underline" type="text" placeholder="$1300" />
+              </label>
+              <label>
+                Current Job
+                <input mbsc-input data-icon="empty" data-label-style="stacked" data-input-style="underline" type="text" placeholder="Broker" />
+              </label>
+              <label>
+                Since?
+                <input mbsc-input data-icon="empty" data-label-style="stacked" data-input-style="underline" type="text" placeholder="2009" />
+              </label>
+              <label>
+                Income
+                <input mbsc-input data-icon="empty" data-label-style="stacked" data-input-style="underline" type="text" placeholder="$80,000" />
+              </label>
+              <label>
+                Credit Score
+                <input mbsc-input data-icon="empty" data-label-style="stacked" data-input-style="underline" type="text" placeholder="720" />
+              </label>
+              <label>
+                When would you like to move in?
+                <input mbsc-input data-icon="empty" data-label-style="stacked" data-input-style="underline" type="date"/>
+              </label>
+              <label>
+                Lease Length
+                <input mbsc-input data-icon="empty" data-label-style="stacked" data-input-style="underline" type="text" placeholder="1 year" />
+              </label>
+              <label>
+                Upload a Profile Picture
+                <input mbsc-input data-input-style="empty" type="file" placeholder="Select file..." />
+              </label>
+
+          </div>
+          <div class="mbsc-form-group mbsc-btn-group-block">
+              <input type="button" value="Go" onclick="goToNewPage(document.dropdown.selected)">
+
+          </div>
+          <a href="map.html"><div class="skip-btn">Skip</div></a>
+      </div>
+    </div>
+</div>
+
+<script>
+
+    function goToNewPage() {
+      if(document.getElementById('target').value){
+        window.location.href = document.getElementById('target').value;
+      }
+    }
+
+    mobiscroll.settings = {
+    theme: 'material'
+    };
+
+    mobiscroll.settings = {
+        lang: 'en',   // Specify language like: lang: 'pl' or omit setting to use default
+        theme: 'ios'  // Specify theme like: theme: 'ios' or omit setting to use default
+    };
+</script>
+
+</body>
+</html>

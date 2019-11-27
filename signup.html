@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html manifest="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+    <title>Validation</title>
+
+    <link rel="stylesheet" href="css/mobiscroll.javascript.min.css">
+    <script src="js/mobiscroll.javascript.min.js"></script>
+
+    <style type="text/css">
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    .content{
+      width: 100%;
+      text-align: center;
+    }
+    #brand{
+      margin: 20px 20px 8px 20px;
+    }
+    .content #brand img{
+      width: 50%;
+      height: 150px;
+    }
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      max-width: 450px;
+      margin: auto;
+      text-align: center;
+      font-family: arial;
+    }
+    </style>
+
+</head>
+<div class="card">
+  <body>
+
+    <div class="content">
+      <div id="brand">
+        <img src="img/home.png" alt="home logo">
+        <p>Rental Raters</p>
+      </div>
+    </div>
+
+  <div mbsc-page class="demo-validation">
+      <form mbsc-form id="demo">
+          <div class="mbsc-form-group">
+              <div class="mbsc-form-group-title">Sign Up</div>
+
+              <label>
+                  <input mbsc-input name="username" type="text" placeholder="Username" minlength="2" required data-icon="user4">
+              </label>
+              <label>
+                  <input mbsc-input name="email" type="email" placeholder="Email" required data-icon="ion-ios7-email">
+              </label>
+              <label>
+                  <input mbsc-input name="password" type="password" placeholder="Password" minlength="6" required data-icon="lock2" data-password-toggle="true">
+              </label>
+              <label>
+                  <textarea mbsc-textarea name="bio" placeholder="About me" required minlength="20" data-icon="line-note"></textarea>
+              </label>
+
+          </div>
+          <div class="mbsc-form-group mbsc-btn-group-block">
+              <button mbsc-button id="md-success" data-icon="checkmark" type="submit"><a href="forms-mobiledemo/forms_mobile.html">Next</a></button>
+          </div>
+      </form>
+  </div>
+</div>
+<script>
+
+
+    mobiscroll.settings = {
+        lang: 'en',
+        theme: 'ios'
+
+    var form = document.getElementById("demo"),
+        addedToFields = false;
+
+    form.noValidate = true;
+    form.onsubmit = validateForm;
+
+    function validateForm(event) {
+        event.preventDefault();
+
+        var f,
+            formvalid = true;
+
+        for (f = 0; f < form.elements.length; f++) {
+
+            var field = form.elements[f],
+                name = field.name.charAt(0).toUpperCase() + field.name.slice(1),
+                parent = field.parentNode,
+                errorMsg = parent.querySelector('.mbsc-err-msg');
+
+            if (name && field.validity.valid) {
+                parent.parentNode.classList.remove('mbsc-err');
+
+                if (errorMsg) {
+                    parent.removeChild(errorMsg);
+                }
+            } else if (name) {
+                if (!errorMsg) {
+                    errorMsg = document.createElement('span');
+                    errorMsg.className = 'mbsc-err-msg';
+                    parent.appendChild(errorMsg);
+                }
+
+                var firstError = null;
+                for (var key in field.validity) {
+                    if (!firstError && key !== 'valid' && field.validity[key]) {
+                        firstError = key;
+                    }
+                }
+                switch (firstError) {
+                    case 'tooShort':
+                        {
+                            errorMsg.innerHTML = name + ' is too short';
+                            break;
+                        }
+                    case 'typeMismatch':
+                        {
+                            errorMsg.innerHTML = name + ' is invalid';
+                            break;
+                        }
+                    case 'valueMissing':
+                    default:
+                        {
+                            errorMsg.innerHTML = name + ' is required';
+                            break;
+                        }
+                }
+                if (name === 'Bio' && firstError === 'tooShort') {
+                    errorMsg.innerHTML = "Don't be shy, surely you can tell more";
+                }
+
+                parent.parentNode.classList.add('mbsc-err');
+                formvalid = false;
+            }
+
+            if (!addedToFields) {
+                field.oninput = validateForm;
+            }
+        }
+
+        if (formvalid && event.type === 'submit') {
+            mobiscroll.alert({
+                title: 'Thank you for registering',
+                message: 'You have successfully signed up as a user!'
+            });
+        } else if (!addedToFields) {
+            addedToFields = true;
+        }
+
+        return formvalid;
+    }
+</script>
+
+</body>
+</html>

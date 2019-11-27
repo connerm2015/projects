@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 450px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 20px;
+  margin: 50px;
+  text-align: center;
+}
+
+.home {
+  border: solid black 1px;
+  max-width: 80%;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  border-radius: 10px;
+  margin-bottom:10px;
+}
+.home img{
+  border: solid black 1px;
+  border-radius: 10px;
+  max-width:100%;
+  height: 100px;
+  float:left;
+  margin: 5px;
+}
+.add-btn{
+  width: 10%;
+}
+.add-btn img{
+  width: 100%;
+  height: 100px;
+}
+.Maintenance{
+  border: solid black 1px;
+  border-radius: 10px;
+  width: 125px;
+  height: 100px;
+  margin-left: 50px;
+  margin-top: 20px;
+  float: left;
+}
+.receipts{
+  border: solid black 1px;
+  border-radius: 10px;
+  width: 125px;
+  height: 100px;
+  margin-right: 50px;
+  margin-top: 20px;
+  float: right;
+
+}
+.reviews {
+  border: solid black 1px;
+  max-width: 80%;
+  margin: auto;
+  margin-top: 150px;
+  text-align: center;
+  font-family: arial;
+  border-radius: 10px;
+  clear: both;
+}
+.topnav {
+  overflow: hidden;
+  background-color: #ddd;
+  position: relative;
+}
+.topnav #myLinks {
+  display: none;
+}
+.topnav a {
+  color: black;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+.topnav a.icon {
+  background: white;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.topnav a:hover {
+  background-color: #ccc;
+  color: black;
+}
+.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.rate {
+    height: 46px;
+    padding: 0 10px;
+    display: inline-block;
+  }
+.rate-container{
+  text-align: center;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="header">
+    <div class="topnav">
+    <a href="#home" class="active">Landlord Dashboard</a>
+    <div id="myLinks">
+      <a href="map.html">Search</a>
+      <a href="landlordprofile.html">Profile</a>
+      <a href="landlord-dashboard.html">Dashboard</a>
+      <a href="workorder.html">Work Orders</a>
+    </div>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+    </div>
+  </div>
+
+  <img src="img/profilepic.jpeg" alt="John" style="width:50%">
+  <h4>John Doe</h4>
+
+  <div class="home">
+    <img src="home.png" alt="">
+
+    <div class="home-info">
+      <h3>Property 1</h3>
+      <p>1234 Main Street<br>$1500/month</p>
+    </div>
+  </div>
+  <div class="home">
+    <img src="home.png" alt="">
+
+    <div class="home-info">
+      <h3>Property 1</h3>
+      <p>1234 Main Street<br>$1500/month</p>
+    </div>
+  </div>
+  <div class="home">
+    <img src="home.png" alt="">
+
+    <div class="home-info">
+      <h3>Property 1</h3>
+      <p>1234 Main Street<br>$1500/month</p>
+    </div>
+  </div>
+  Add another property<br>
+  <a href="#"><img src="add-btn.png" style="width:50px; height:50px;" title="White flower" alt="Flower"></a>
+  <br><br>
+  <a href="#">
+    <div class="Maintenance">
+      <h3 style="margin: 10px;">Maintenance</h3>
+      <p style="color: red;">2</p>
+    </div>
+  </a>
+  <a href="#">
+    <div class="receipts">
+      <h3 style="margin: 10px;">Scan<br>Receipts</h3>
+    </div>
+  </a>
+  <a href="#">
+    <div class="reviews">
+      <h3>Reviews</h3>
+    </div>
+  </a>
+
+</div>
+
+<script>
+
+
+function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+</body>
+</html>

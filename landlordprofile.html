@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 450px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 20px;
+  margin: 50px;
+  text-align: center;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+.home {
+  border: solid black 1px;
+  max-width: 80%;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  border-radius: 10px;
+  margin-bottom:10px;
+}
+.home img{
+  border: solid black 1px;
+  border-radius: 10px;
+  max-width:100%;
+  height: 100px;
+  float:left;
+  margin: 5px;
+}
+#profile{
+  text-align: left;
+  margin-left: 50px;
+}
+#reviews{
+  border: solid black 1px;
+  text-align: center;
+  max-width: 80%;
+  margin: auto;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #ddd;
+  position: relative;
+}
+.topnav #myLinks {
+  display: none;
+}
+.topnav a {
+  color: black;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+.topnav a.icon {
+  background: white;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.topnav a:hover {
+  background-color: #ccc;
+  color: black;
+}
+.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.rate {
+    height: 46px;
+    padding: 0 10px;
+    display: inline-block;
+  }
+.rate-container{
+  text-align: center;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="header">
+    <div class="topnav">
+    <a href="#home" class="active">Landlord Profile</a>
+    <div id="myLinks">
+      <a href="map.html">Search</a>
+      <a href="#landlordprofile.html">Profile</a>
+      <a href="landlord-dashboard.html">Dashboard</a>
+      <a href="workorder.html">Work Orders</a>
+
+    </div>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+    </div>
+  </div>
+
+  <img src="img/profilepic.jpeg" alt="John" style="width:100%">
+  <h1>John Doe</h1>
+  <div class="rate-container">
+    <div class="rate">
+      <input type="radio" id="star5" name="rate" value="5" />
+      <label for="star5" title="text">5 stars</label>
+      <input type="radio" id="star4" name="rate" value="4" />
+      <label for="star4" title="text">4 stars</label>
+      <input type="radio" id="star3" name="rate" value="3" />
+      <label for="star3" title="text">3 stars</label>
+      <input type="radio" id="star2" name="rate" value="2" />
+      <label for="star2" title="text">2 stars</label>
+      <input type="radio" id="star1" name="rate" value="1" />
+      <label for="star1" title="text">1 star</label>
+    </div>
+    <div class="rating">5.0</div>
+  </div>
+  <p><button>Contact</button></p>
+
+  <p class="title">My name is John. I have been renovating and renting properties for over 15 years.</p>
+
+  <div class="home">
+    <img src="home.png" alt="">
+
+    <div class="home-info">
+      <h3>Property 1</h3>
+      <p>1234 Main Street<br>$1500/month</p>
+    </div>
+  </div>
+  <div class="home">
+    <img src="home.png" alt="">
+
+    <div class="home-info">
+      <h3>Property 1</h3>
+      <p>1234 Main Street<br>$1500/month</p>
+    </div>
+  </div>
+  <div class="home">
+    <img src="home.png" alt="">
+
+    <div class="home-info">
+      <h3>Property 1</h3>
+      <p>1234 Main Street<br>$1500/month</p>
+    </div>
+  </div>
+
+  <div id="profile">
+    <h2 style="text-align:center">Profile</h2>
+      <h5>Email</h5>
+        <p>johndoe@gmail.com</>
+      <h5>How many properties do you own?</h5>
+        <p>3</p>
+      <h5>What makes you a great landlord?</h5>
+        <p>I get work done in a timely manner. I offer mowing services. All of my homes have updated appliances.</p>
+      <h5>What is your turn around time to complete work orders?</h5>
+        <p>1 week</p>
+      <h5>When are you available for showings?</h5>
+        <p>Evenings and weekends</p>
+      <h5>Would you consider having pets in your rental?</h5>
+        <p>All pets welcomed</p>
+  </div>
+  <div id="reviews">
+    <h2 style="margin: 10px;">Reviews</h2>
+      <h5>Clara Says...</h5>
+        <p style="margin: 10px;">“We rented from John for 2 years.John was always on time and addressed any of my concerns. My family highly recommends him as a landlord.”</p>
+  </div>
+
+  <div style="margin: 24px;">
+    <a href="#"><i class="fa fa-instagram"></i></a>
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    <a href="#"><i class="fa fa-linkedin"></i></a>
+    <a href="#"><i class="fa fa-facebook"></i></a>
+  </div>
+</div>
+
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+</body>
+</html>
